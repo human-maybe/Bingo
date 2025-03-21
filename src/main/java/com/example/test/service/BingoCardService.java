@@ -23,7 +23,7 @@ public class BingoCardService {
         todaysCard.setDay(new Date());
         bingoCardRepository.save(todaysCard);
 
-        return todaysCard;
+         return todaysCard;
     }
 
 }
