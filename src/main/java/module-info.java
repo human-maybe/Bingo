@@ -9,6 +9,8 @@ module com.example.test {
     requires jakarta.persistence;
     requires static lombok;
     requires spring.data.jpa;
+    requires spring.data.commons;
+    requires jakarta.annotation;
 
     opens com.example.test to javafx.fxml;
     exports com.example.test;

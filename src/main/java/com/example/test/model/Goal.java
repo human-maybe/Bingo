@@ -1,9 +1,7 @@
 package com.example.test.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.example.test.model.enums.Proirity;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,8 +20,14 @@ public class Goal {
     @Column(name = "baselevel")
     private double baseLevel; // determines the base value of the goal eg 10 pages for reading , 20 push ups
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "proirity")
+    private Proirity proirity;  // used to make bingo card focus on it more
 
-    public  String  goalFormat(String text, double level) {
+    @Column(name = "is_active")
+    private Boolean isActive;
+
+    public  String setGoalLevel(String text, double level) {
         int startIndex = text.indexOf("{");
         int endIndex = text.indexOf("}");
 
